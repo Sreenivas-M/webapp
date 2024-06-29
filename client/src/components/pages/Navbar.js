@@ -37,7 +37,7 @@ function Navbar() {
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container ">
           <NavLink to="/" class="navbar-brand" style={{textDecoration:'none'}}>
-            <h2>{isAdmin ? "Admin logged" : "Costmor Logged"}</h2>
+            <h2>{isAdmin ? "Admin logged" : isUser ? "Costmor Logged" : "Welcome "}</h2>
           </NavLink>
           <button
             class="navbar-toggler"

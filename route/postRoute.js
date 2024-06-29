@@ -5,15 +5,17 @@ const {  createPost,
     getAllPosts,
     getPostById,
     updatePostById,
-    deletePostById  } = require("../controller/postController");
+    deletePostById , viewfile } = require("../controller/postController");
+const upload = require("../middleware/imageUpload");
 
-router.post("/createpost", auth, createPost);
+router.post("/createpost", auth, upload.single('file'),  createPost);
 
 router.post('/posts', auth, getAllPosts);
 
 router.get('/posts/:postId', auth, getPostById);
+router.get('/view/:filename',  viewfile);
 
-router.put('/edit/:postId', auth, updatePostById);
+router.put('/edit/:postId', auth, upload.single('file'), updatePostById);
 
 router.delete('/delete/:postId', auth, deletePostById);
 

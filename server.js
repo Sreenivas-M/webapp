@@ -26,6 +26,7 @@ app.use(cors());
 app.use('/v1/auth', authRoute);
 app.use('/v1/post', postRoute);
 
+app.use('/public/Images', express.static(path.join(__dirname, 'public/Images')));
 
 app.use(express.static(path.join(__dirname, "./client/build")));
 app.get("*", function (req, res) {

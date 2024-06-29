@@ -25,15 +25,13 @@ function Main() {
     <Router>
       <Navbar />
       <ToastContainer autoClose={1500} position="top-center" />
-      <Routes>
-        
+      <Routes>        
           <Route path={"/"} element={<ProtectedRoute auth={isLogged}><Home /> </ProtectedRoute>} />          
           <Route path={"/users"} element={<ProtectedRoute auth={isLogged}><Users /> </ProtectedRoute>} />
           <Route path={"/posts"} element={<ProtectedRoute auth={isLogged}><Post /> </ProtectedRoute>} />
           <Route path={"/register"} element={<Register />} />
           <Route path={"/login"} element={<Login />} />
-          <Route path="*" element={<Navigate to="/login" />} />
-        
+          <Route path="*" element={<Navigate to="/login" />} />        
       </Routes>
     </Router>
   );
